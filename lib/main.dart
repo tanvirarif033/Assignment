@@ -156,8 +156,54 @@ class _MyHomePageState extends State<MyHomePage> {
     color: Colors.lightGreen,
     child: Center(child: Text('Winter Cloths',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),))),
 
+    Gap(20),
+    SingleChildScrollView(
+    scrollDirection: Axis.horizontal,
+    child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    Column(
+    children: [
+    Container(
+    height: 250,
+    width: 250,
+    child: Image.network('https://m.media-amazon.com/images/I/61xIzU8NxPL._AC_SX679_.jpg')),
 
+    ],
+
+
+    ),
+    Gap(10),
+    Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    Text('Columbia Mens Jacket',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+    Text('Price:2100 Tk',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+    Text('Size:',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+    SizedBox(height: 5,width:5),
+    DropdownButton<String>(
+
+    items: ['Small','Medium', 'Large',]
+        .map((String value) {
+    return DropdownMenuItem<String>(
+    value: value,
+    child: Text(value),
+    );
+    }).toList(),
+    onChanged: (String? newValue) {
+    // Do something with the selected value
+    },
+    hint: Text(
+    'Select',
+    style: TextStyle(
+    color: Colors.black,
+    ),
+
+    ),
+    ),
  // This trailing comma makes auto-formatting nicer for build methods.
     );
+
   }
 }
