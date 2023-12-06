@@ -103,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
         toolbarHeight: 60,
         toolbarOpacity: 1,
         elevation: 0,
-        backgroundColor: Colors.indigoAccent,
+        backgroundColor: Colors.blueGrey,
         actions: [
           // IconButton(onPressed: (){MySnackbar("comments", context);}, icon:Icon(Icons.comment) ),
           IconButton(onPressed: (){MySnackbar("Search", context);}, icon:Icon(Icons.search) ),
@@ -117,7 +117,7 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
     bottomNavigationBar: BottomNavigationBar(
     type: BottomNavigationBarType.fixed,
-    backgroundColor: Colors.indigoAccent,
+    backgroundColor: Colors.blueGrey,
     //showUnselectedLabels: false,
     showSelectedLabels: true,
 
@@ -140,6 +140,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ),
 
       body: Container(
+
       color: Colors.grey.shade200,
     child: Container(
 
@@ -279,7 +280,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 ElevatedButton(onPressed: (){ Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context)=> payment_method(),
+                      builder: (context)=> payment_method1(),
                     ));}, child: Text('Buy Now',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
               ],
             ),
@@ -345,7 +346,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context)=> payment_method(),
+                        builder: (context)=> payment_method2(),
                       ));
                 }, child: Text('Buy Now',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
               ],
@@ -412,7 +413,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context)=> payment_method(),
+                        builder: (context)=> payment_method3(),
                       ));
                 }, child: Text('Buy Now',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
               ],
@@ -457,80 +458,558 @@ class payment_method extends StatelessWidget{
         toolbarHeight: 60,
         toolbarOpacity: 1,
         elevation: 0,
-        backgroundColor: Colors.indigoAccent,
+        backgroundColor: Colors.blueGrey,
       ),
-      body: Column(
-
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.start,
+      body: Container(
+        color: Colors.grey.shade200,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+       // crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
+              Container(
+                height: 260,
+                width: 260,
+                child: Image.network('https://m.media-amazon.com/images/I/61xIzU8NxPL._AC_SX679_.jpg'),
+              ),
+              Gap(10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Quantity:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+                  Gap(10),
+                  DropdownButton<String>(
+                    items: ['1','2', '3', '4']
+                        .map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      // Do something with the selected value
+                    },
+                    hint: Text(
+                      'Select ',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+
+                    ),
+                  ),
+                ],
+              ),
+              Gap(10),
+              Text('About this item:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+              Text('OMNI-HEAT: Our patented Heat Reflective garments are the ultimate body heat management system for outdoor performance. The interior lining consists of our metallic dot pattern designed to retain heat, while the breathable fabric dissipates moisture.',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500,),maxLines: 4,textAlign: TextAlign.center,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+
+                children: [
+                  Gap(5),
+
+                  Container(
+                      height: 90,
+                      width: 90,
+                      child: Image.network('https://tse2.mm.bing.net/th?id=OIP.BlTniSn8Q0s07PC_t2LnDAHaE7&pid=Api&P=0&h=220')
+                  ),
+                  Gap(5),
+
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP.m7rqv0zESeic7Gnfss7glgHaFS&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP.XRllqUOl74yL-bCUqiwWkAHaE9&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse2.mm.bing.net/th?id=OIP.cSqCVRE_EP7ZcSx-9Iv8xAHaFj&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP._6_1SBDkYzK8wbGnnp4n2gHaEK&pid=Api&P=0&h=220'),
+                  ),
+                ],
+              ),
+              Gap(10),
+              Text('Payment With:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+              Gap(10),
+
+              SizedBox(height: 10),
+              DropdownButton<String>(
+                items: ['Bkash','Nagad', 'Rocket', 'MasterCard', 'Visa']
+                    .map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (String? newValue) {
+                  // Do something with the selected value
+                },
+                hint: Text(
+                  'Select ',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+
+                ),
+              ),
               Gap(20),
+              ElevatedButton(onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context)=> MyHomePage(title: 'E-Commerce'),
+                    ));
+              }, child: Text('Go Back',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
 
-              Container(
-                  height: 90,
-                  width: 90,
-                  child: Image.network('https://tse2.mm.bing.net/th?id=OIP.BlTniSn8Q0s07PC_t2LnDAHaE7&pid=Api&P=0&h=220')
-              ),
-
-              Container(
-                height: 90,
-                width: 90,
-                child: Image.network('https://tse4.mm.bing.net/th?id=OIP.m7rqv0zESeic7Gnfss7glgHaFS&pid=Api&P=0&h=220'),
-              ),
-              Container(
-                height: 90,
-                width: 90,
-                child: Image.network('https://tse4.mm.bing.net/th?id=OIP.XRllqUOl74yL-bCUqiwWkAHaE9&pid=Api&P=0&h=220'),
-              ),
-
-              Container(
-                height: 90,
-                width: 90,
-                child: Image.network('https://tse2.mm.bing.net/th?id=OIP.cSqCVRE_EP7ZcSx-9Iv8xAHaFj&pid=Api&P=0&h=220'),
-              ),
-              Container(
-                height: 90,
-                width: 90,
-                child: Image.network('https://tse4.mm.bing.net/th?id=OIP._6_1SBDkYzK8wbGnnp4n2gHaEK&pid=Api&P=0&h=220'),
-              ),
             ],
           ),
-          Gap(10),
-          Text('Payment With:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
-          Gap(10),
+        ),
+      ),
 
-          SizedBox(height: 10),
-          DropdownButton<String>(
-            items: ['Bkash','Nagad', 'Rocket', 'MasterCard', 'Visa']
-                .map((String value) {
-              return DropdownMenuItem<String>(
-                value: value,
-                child: Text(value),
-              );
-            }).toList(),
-            onChanged: (String? newValue) {
-              // Do something with the selected value
-            },
-            hint: Text(
-              'Select ',
-              style: TextStyle(
-                color: Colors.black,
+    );
+  }
+
+}
+class payment_method1 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    ButtonStyle buttonStyle=ElevatedButton.styleFrom(
+        padding: EdgeInsets.all(16),
+        backgroundColor: Colors.blueAccent,
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(0)),
+        )
+    );
+    return Scaffold(
+      appBar:AppBar(
+        title:Text( 'Payment Method'),
+        titleSpacing: 0,
+        // centerTitle: true,
+        toolbarHeight: 60,
+        toolbarOpacity: 1,
+        elevation: 0,
+        backgroundColor: Colors.blueGrey,
+      ),
+      body: Container(
+        color: Colors.grey.shade200,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+
+            children: [
+              Container(
+                height: 260,
+                width: 260,
+                child: Image.network('https://m.media-amazon.com/images/I/91Mn0ReDcuL._AC_UL480_FMwebp_QL65_.jpg'),
               ),
+              Gap(10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Quantity:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+                  Gap(10),
+                  DropdownButton<String>(
+                    items: ['1','2', '3', '4']
+                        .map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      // Do something with the selected value
+                    },
+                    hint: Text(
+                      'Select ',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
 
-            ),
+                    ),
+                  ),
+                ],
+              ),
+              Gap(10),
+              Text('About this item:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+              Text('Cotton and polyester come together to deliver softness and durability so you can move with comfort. This wear-everywhere sweatshirt is lighter than classic hoodies for easy layering and equipped with a kangaroo pocket for stashing your essentials. The burnout wash gently fades the fabric to create a casual lived-in look',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500,),maxLines: 5,textAlign: TextAlign.center,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+
+                children: [
+                  Gap(5),
+
+                  Container(
+                      height: 90,
+                      width: 90,
+                      child: Image.network('https://tse2.mm.bing.net/th?id=OIP.BlTniSn8Q0s07PC_t2LnDAHaE7&pid=Api&P=0&h=220')
+                  ),
+                  Gap(5),
+
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP.m7rqv0zESeic7Gnfss7glgHaFS&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP.XRllqUOl74yL-bCUqiwWkAHaE9&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse2.mm.bing.net/th?id=OIP.cSqCVRE_EP7ZcSx-9Iv8xAHaFj&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP._6_1SBDkYzK8wbGnnp4n2gHaEK&pid=Api&P=0&h=220'),
+                  ),
+                ],
+              ),
+              Gap(10),
+              Text('Payment With:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+              Gap(10),
+
+              SizedBox(height: 10),
+              DropdownButton<String>(
+                items: ['Bkash','Nagad', 'Rocket', 'MasterCard', 'Visa']
+                    .map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (String? newValue) {
+                  // Do something with the selected value
+                },
+                hint: Text(
+                  'Select ',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+
+                ),
+              ),
+              Gap(20),
+              ElevatedButton(onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context)=> MyHomePage(title: 'E-Commerce'),
+                    ));
+              }, child: Text('Go Back',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
+
+
+            ],
           ),
-          Gap(20),
-          ElevatedButton(onPressed: (){
-            Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context)=> MyHomePage(title: 'E-Commerce'),
-                ));
-          }, child: Text('Go Back',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
+        ),
+      ),
 
-        ],
+    );
+  }
+
+}
+class payment_method2 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    ButtonStyle buttonStyle=ElevatedButton.styleFrom(
+        padding: EdgeInsets.all(16),
+        backgroundColor: Colors.blueAccent,
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(0)),
+        )
+    );
+    return Scaffold(
+      appBar:AppBar(
+        title:Text( 'Payment Method'),
+        titleSpacing: 0,
+        // centerTitle: true,
+        toolbarHeight: 60,
+        toolbarOpacity: 1,
+        elevation: 0,
+        backgroundColor: Colors.blueGrey,
+      ),
+      body: Container(
+        color: Colors.grey.shade200,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+
+            children: [
+              Container(
+                height: 260,
+                width: 260,
+                child: Image.network('https://m.media-amazon.com/images/I/81IbJuc-ShL._MCnd_AC_UL480_FMwebp_QL65_.jpg'),
+              ),
+              Gap(10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Quantity:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+                  Gap(10),
+                  DropdownButton<String>(
+                    items: ['1','2', '3', '4']
+                        .map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      // Do something with the selected value
+                    },
+                    hint: Text(
+                      'Select ',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+
+                    ),
+                  ),
+                ],
+              ),
+              Gap(10),
+              Text('About this item:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+              Text('Unique Design: Windproof puffer coat, soft and warm padded, ribbed knit cuffs, full zipper, side zipper pockets for essential storage, stand-up collar, solid color, cropped length, oversized style, winter coat outwear for wintry days.',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500,),maxLines: 4,textAlign: TextAlign.center,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+
+                children: [
+                  Gap(5),
+
+                  Container(
+                      height: 90,
+                      width: 90,
+                      child: Image.network('https://tse2.mm.bing.net/th?id=OIP.BlTniSn8Q0s07PC_t2LnDAHaE7&pid=Api&P=0&h=220')
+                  ),
+                  Gap(5),
+
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP.m7rqv0zESeic7Gnfss7glgHaFS&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP.XRllqUOl74yL-bCUqiwWkAHaE9&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse2.mm.bing.net/th?id=OIP.cSqCVRE_EP7ZcSx-9Iv8xAHaFj&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP._6_1SBDkYzK8wbGnnp4n2gHaEK&pid=Api&P=0&h=220'),
+                  ),
+                ],
+              ),
+              Gap(10),
+              Text('Payment With:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+              Gap(10),
+
+              SizedBox(height: 10),
+              DropdownButton<String>(
+                items: ['Bkash','Nagad', 'Rocket', 'MasterCard', 'Visa']
+                    .map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (String? newValue) {
+                  // Do something with the selected value
+                },
+                hint: Text(
+                  'Select ',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+
+                ),
+              ),
+              Gap(20),
+              ElevatedButton(onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context)=> MyHomePage(title: 'E-Commerce'),
+                    ));
+              }, child: Text('Go Back',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
+
+            ],
+          ),
+        ),
+      ),
+
+    );
+  }
+
+}
+class payment_method3 extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    ButtonStyle buttonStyle=ElevatedButton.styleFrom(
+        padding: EdgeInsets.all(16),
+        backgroundColor: Colors.blueAccent,
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(0)),
+        )
+    );
+    return Scaffold(
+      appBar:AppBar(
+        title:Text( 'Payment Method'),
+        titleSpacing: 0,
+        // centerTitle: true,
+        toolbarHeight: 60,
+        toolbarOpacity: 1,
+        elevation: 0,
+        backgroundColor: Colors.blueGrey,
+      ),
+      body: Container(
+        color: Colors.grey.shade200,
+        child: SingleChildScrollView(
+          scrollDirection: Axis.vertical,
+          child: Column(
+            // crossAxisAlignment: CrossAxisAlignment.start,
+
+            children: [
+              Container(
+                height: 260,
+                width: 260,
+                child: Image.network('https://m.media-amazon.com/images/I/710Zgw3lZAL._AC_SY550_.jpg'),
+              ),
+              Gap(10),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text('Quantity:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+                  Gap(10),
+                  DropdownButton<String>(
+                    items: ['1','2', '3', '4']
+                        .map((String value) {
+                      return DropdownMenuItem<String>(
+                        value: value,
+                        child: Text(value),
+                      );
+                    }).toList(),
+                    onChanged: (String? newValue) {
+                      // Do something with the selected value
+                    },
+                    hint: Text(
+                      'Select ',
+                      style: TextStyle(
+                        color: Colors.black,
+                      ),
+
+                    ),
+                  ),
+                ],
+              ),
+              Gap(10),
+              Text('About this item:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+              Text('Shawl Wraps for Women. Classic Plaid Patterned Pashmina Brings You More Fashion Element. The Warm Fabric Makes you No Longer Feel the Cold When Wandering Outdoors in Winter. The Tassel Hem Makes You More Elegant and Confident and can better to show the feminine and charm. Loosing Fitting Design Poncho Offers an Elegant Alternative, Hide any Imperfertion also Flatters your Figure and Accentuate your Curve.',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500,),maxLines: 7,textAlign: TextAlign.center,),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+
+                children: [
+                  Gap(5),
+
+                  Container(
+                      height: 90,
+                      width: 90,
+                      child: Image.network('https://tse2.mm.bing.net/th?id=OIP.BlTniSn8Q0s07PC_t2LnDAHaE7&pid=Api&P=0&h=220')
+                  ),
+                  Gap(5),
+
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP.m7rqv0zESeic7Gnfss7glgHaFS&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP.XRllqUOl74yL-bCUqiwWkAHaE9&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse2.mm.bing.net/th?id=OIP.cSqCVRE_EP7ZcSx-9Iv8xAHaFj&pid=Api&P=0&h=220'),
+                  ),
+                  Gap(5),
+                  Container(
+                    height: 90,
+                    width: 90,
+                    child: Image.network('https://tse4.mm.bing.net/th?id=OIP._6_1SBDkYzK8wbGnnp4n2gHaEK&pid=Api&P=0&h=220'),
+                  ),
+                ],
+              ),
+              Gap(10),
+              Text('Payment With:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+              Gap(10),
+
+              SizedBox(height: 10),
+              DropdownButton<String>(
+                items: ['Bkash','Nagad', 'Rocket', 'MasterCard', 'Visa']
+                    .map((String value) {
+                  return DropdownMenuItem<String>(
+                    value: value,
+                    child: Text(value),
+                  );
+                }).toList(),
+                onChanged: (String? newValue) {
+                  // Do something with the selected value
+                },
+                hint: Text(
+                  'Select ',
+                  style: TextStyle(
+                    color: Colors.black,
+                  ),
+
+                ),
+              ),
+              Gap(20),
+              ElevatedButton(onPressed: (){
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context)=> MyHomePage(title: 'E-Commerce'),
+                    ));
+              }, child: Text('Go Back',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
+
+            ],
+          ),
+        ),
       ),
 
     );
