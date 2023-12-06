@@ -115,6 +115,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
         ],
       ),
+    bottomNavigationBar: BottomNavigationBar(
+    type: BottomNavigationBarType.fixed,
+    backgroundColor: Colors.indigoAccent,
+    //showUnselectedLabels: false,
+    showSelectedLabels: true,
+
+    onTap: (index){
+    setState(() {
+    myIndex=index;
+    });
+    },
 
 
 
