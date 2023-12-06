@@ -223,6 +223,215 @@ class _MyHomePageState extends State<MyHomePage> {
     ],
     ),
     ),
+      Gap(20),
+      SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              children: [
+                Container(
+                    height: 250,
+                    width: 250,
+                    child: Image.network('https://m.media-amazon.com/images/I/91Mn0ReDcuL._AC_UL480_FMwebp_QL65_.jpg')),
+
+              ],
+
+            ),
+
+            Gap(10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Sueded Pullover Hoodie',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+                Text('Price:1500 Tk',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+                Text('Size:',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+                SizedBox(height: 5,width:5),
+                DropdownButton<String>(
+
+                  items: ['Small','Medium', 'Large',]
+                      .map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    // Do something with the selected value
+                  },
+                  hint: Text(
+                    'Select',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+
+                  ),
+                ),
+                Gap(10),
+                Text('Product details',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+                Text('Fabric Type : 80% Cotton',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+                Text('Care Instructions : Machine Wash',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+                Text('Origin : Imported',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+                Gap(10),
+
+                ElevatedButton(onPressed: (){ Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context)=> payment_method(),
+                    ));}, child: Text('Buy Now',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
+              ],
+            ),
+
+
+          ],
+        ),
+      ),
+      Gap(20),
+      SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              children: [
+                Container(
+                    height: 250,
+                    width: 250,
+                    child: Image.network('https://m.media-amazon.com/images/I/81IbJuc-ShL._MCnd_AC_UL480_FMwebp_QL65_.jpg')),
+
+              ],
+
+            ),
+
+            Gap(10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Hooded Puffer Coat',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+                Text('Price:3100 Tk',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+                Text('Size:',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+                SizedBox(height: 5,width:5),
+                DropdownButton<String>(
+
+                  items: ['Small','Medium', 'Large',]
+                      .map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    // Do something with the selected value
+                  },
+                  hint: Text(
+                    'Select',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+
+                  ),
+                ),
+                Gap(10),
+                Text('Product details',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+                Text('Fabric Type :100% Nylon',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+                Text('Care Instructions :  Machine Wash',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+                Text('Origin : Imported',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+                Gap(10),
+
+                ElevatedButton(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context)=> payment_method(),
+                      ));
+                }, child: Text('Buy Now',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
+              ],
+            ),
+
+
+          ],
+        ),
+      ),
+      Gap(20),
+      SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Column(
+              children: [
+                Container(
+                    height: 250,
+                    width: 250,
+                    child: Image.network('https://m.media-amazon.com/images/I/710Zgw3lZAL._AC_SY550_.jpg')),
+
+              ],
+
+            ),
+
+            Gap(10),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text('Warm Superfine Shawl',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+                Text('Price:2300 Tk',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+                Text('Size:',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+                SizedBox(height: 5,width:5),
+                DropdownButton<String>(
+
+                  items: ['Small','Medium', 'Large',]
+                      .map((String value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value),
+                    );
+                  }).toList(),
+                  onChanged: (String? newValue) {
+                    // Do something with the selected value
+                  },
+                  hint: Text(
+                    'Select',
+                    style: TextStyle(
+                      color: Colors.black,
+                    ),
+
+                  ),
+                ),
+                Gap(10),
+                Text('Product details',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+                Text('Fabric Type :100% Cashmere',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+                Text('Care Instructions :Hand Wash Only',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+                Text('Origin : Imported',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+                Gap(10),
+
+                ElevatedButton(onPressed: (){
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context)=> payment_method(),
+                      ));
+                }, child: Text('Buy Now',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
+              ],
+            ),
+
+
+          ],
+        ),
+      ),
+
+
+
+
+    ],
+    ),
+    ),
+    ),
+      )
+
  // This trailing comma makes auto-formatting nicer for build methods.
     );
 
