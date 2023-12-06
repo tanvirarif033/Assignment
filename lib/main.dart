@@ -152,7 +152,7 @@ class _MyHomePageState extends State<MyHomePage> {
     Gap(20),
     Container(
     height: 50,
-    width: 140,
+    width: 150,
     color: Colors.lightGreen,
     child: Center(child: Text('Winter Cloths',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),))),
 
