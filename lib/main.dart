@@ -437,3 +437,103 @@ class _MyHomePageState extends State<MyHomePage> {
 
   }
 }
+
+class payment_method extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    ButtonStyle buttonStyle=ElevatedButton.styleFrom(
+        padding: EdgeInsets.all(16),
+        backgroundColor: Colors.blueAccent,
+        foregroundColor: Colors.white,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.all(Radius.circular(0)),
+        )
+    );
+    return Scaffold(
+      appBar:AppBar(
+        title:Text( 'Payment Method'),
+        titleSpacing: 0,
+        // centerTitle: true,
+        toolbarHeight: 60,
+        toolbarOpacity: 1,
+        elevation: 0,
+        backgroundColor: Colors.indigoAccent,
+      ),
+      body: Column(
+
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+
+            children: [
+              Gap(20),
+
+              Container(
+                  height: 90,
+                  width: 90,
+                  child: Image.network('https://tse2.mm.bing.net/th?id=OIP.BlTniSn8Q0s07PC_t2LnDAHaE7&pid=Api&P=0&h=220')
+              ),
+
+              Container(
+                height: 90,
+                width: 90,
+                child: Image.network('https://tse4.mm.bing.net/th?id=OIP.m7rqv0zESeic7Gnfss7glgHaFS&pid=Api&P=0&h=220'),
+              ),
+              Container(
+                height: 90,
+                width: 90,
+                child: Image.network('https://tse4.mm.bing.net/th?id=OIP.XRllqUOl74yL-bCUqiwWkAHaE9&pid=Api&P=0&h=220'),
+              ),
+
+              Container(
+                height: 90,
+                width: 90,
+                child: Image.network('https://tse2.mm.bing.net/th?id=OIP.cSqCVRE_EP7ZcSx-9Iv8xAHaFj&pid=Api&P=0&h=220'),
+              ),
+              Container(
+                height: 90,
+                width: 90,
+                child: Image.network('https://tse4.mm.bing.net/th?id=OIP._6_1SBDkYzK8wbGnnp4n2gHaEK&pid=Api&P=0&h=220'),
+              ),
+            ],
+          ),
+          Gap(10),
+          Text('Payment With:',style: TextStyle(fontSize:15,fontWeight: FontWeight.bold),),
+          Gap(10),
+
+          SizedBox(height: 10),
+          DropdownButton<String>(
+            items: ['Bkash','Nagad', 'Rocket', 'MasterCard', 'Visa']
+                .map((String value) {
+              return DropdownMenuItem<String>(
+                value: value,
+                child: Text(value),
+              );
+            }).toList(),
+            onChanged: (String? newValue) {
+              // Do something with the selected value
+            },
+            hint: Text(
+              'Select ',
+              style: TextStyle(
+                color: Colors.black,
+              ),
+
+            ),
+          ),
+          Gap(20),
+          ElevatedButton(onPressed: (){
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context)=> MyHomePage(title: 'E-Commerce'),
+                ));
+          }, child: Text('Go Back',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
+
+        ],
+      ),
+
+    );
+  }
+
+}
