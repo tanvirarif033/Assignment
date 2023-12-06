@@ -197,7 +197,7 @@ class _MyHomePageState extends State<MyHomePage> {
     hint: Text(
     'Select',
     style: TextStyle(
-    color: Colors.black,
+    color: Colors.black54,
     ),
 
     ),
