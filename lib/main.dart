@@ -127,6 +127,17 @@ class _MyHomePageState extends State<MyHomePage> {
     });
     },
     currentIndex: myIndex,
+      items: [
+        BottomNavigationBarItem(icon: Icon(Icons.home),label:"Home"),
+
+        BottomNavigationBarItem(icon: Icon(Icons.map),label:"Location"),
+        BottomNavigationBarItem(icon: Icon(Icons.message),label:"Chat"),
+        BottomNavigationBarItem(icon: Icon(Icons.card_giftcard),label:"Offers"),
+      ],
+
+
+
+    ),
 
 
 
