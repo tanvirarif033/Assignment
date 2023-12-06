@@ -202,6 +202,27 @@ class _MyHomePageState extends State<MyHomePage> {
 
     ),
     ),
+    Gap(10),
+    Text('Product details',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+    Text('Fabric Type : 100% Polyester',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+    Text('Care Instructions : Machine Wash',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+    Text('Origin : Imported',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
+    Gap(10),
+
+    ElevatedButton(onPressed: (){
+    Navigator.push(
+    context,
+    MaterialPageRoute(
+    builder: (context)=> payment_method(),
+    ));
+    }, child: Text('Buy Now',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),style: buttonStyle,),
+    ],
+    ),
+
+
+    ],
+    ),
+    ),
  // This trailing comma makes auto-formatting nicer for build methods.
     );
 
