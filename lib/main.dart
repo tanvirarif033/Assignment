@@ -156,8 +156,25 @@ class _MyHomePageState extends State<MyHomePage> {
     color: Colors.lightGreen,
     child: Center(child: Text('Winter Cloths',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),))),
 
+    Gap(20),
+    SingleChildScrollView(
+    scrollDirection: Axis.horizontal,
+    child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    Column(
+    children: [
+    Container(
+    height: 250,
+    width: 250,
+    child: Image.network('https://m.media-amazon.com/images/I/61xIzU8NxPL._AC_SX679_.jpg')),
 
+    ],
+
+    ),
  // This trailing comma makes auto-formatting nicer for build methods.
     );
+
   }
 }
