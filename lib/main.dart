@@ -139,6 +139,22 @@ class _MyHomePageState extends State<MyHomePage> {
 
     ),
 
+      body: Container(
+      color: Colors.grey.shade200,
+    child: Container(
+
+    child: SingleChildScrollView(
+    scrollDirection: Axis.vertical,
+
+    child: Column(
+    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+    children: [
+    Gap(20),
+    Container(
+    height: 50,
+    width: 140,
+    color: Colors.lightGreen,
+    child: Center(child: Text('Winter Cloths',style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold,color: Colors.white),))),
 
 
  // This trailing comma makes auto-formatting nicer for build methods.
