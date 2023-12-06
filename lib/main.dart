@@ -126,7 +126,7 @@ class _MyHomePageState extends State<MyHomePage> {
     myIndex=index;
     });
     },
-
+    currentIndex: myIndex,
 
 
 
