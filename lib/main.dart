@@ -174,6 +174,34 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
     ),
+    Gap(10),
+    Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+    Text('Columbia Mens Jacket',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
+    Text('Price:2100 Tk',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+    Text('Size:',style: TextStyle(fontSize: 15,fontWeight: FontWeight.w500),),
+    SizedBox(height: 5,width:5),
+    DropdownButton<String>(
+
+    items: ['Small','Medium', 'Large',]
+        .map((String value) {
+    return DropdownMenuItem<String>(
+    value: value,
+    child: Text(value),
+    );
+    }).toList(),
+    onChanged: (String? newValue) {
+    // Do something with the selected value
+    },
+    hint: Text(
+    'Select',
+    style: TextStyle(
+    color: Colors.black,
+    ),
+
+    ),
+    ),
  // This trailing comma makes auto-formatting nicer for build methods.
     );
 
