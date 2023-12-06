@@ -202,7 +202,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
     ),
     ),
-    Gap(10),
+    Gap(11),
     Text('Product details',style: TextStyle(fontSize: 20,fontWeight: FontWeight.w700),),
     Text('Fabric Type : 100% Polyester',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
     Text('Care Instructions : Machine Wash',style: TextStyle(fontSize:15,fontWeight: FontWeight.w500),),
